@@ -7,11 +7,10 @@ import (
 	"github.com/rahul-golang/github_app/pkg/controller"
 	"github.com/rahul-golang/github_app/pkg/service"
 	"net/http"
-	"os"
 )
 
-const clientID = "5bab0bfe3c5af21bd7cd"
-const clientSecret = "87e6d124a5cdad23c52ca47197d576bc9181ed09"
+//const clientID = ""
+//const clientSecret = ""
 
 func main() {
 	config := configurations.NewConfiguration("./configurations/config")
@@ -39,8 +38,8 @@ func main() {
 	r.GET("/git/get-repo", apiController.GetRepository)
 	r.POST("/git/pull-request", apiController.CreatePullRequest)
 
-	os.Setenv("GITHUB_CLIENT_ID", clientID)
-	os.Setenv("GITHUB_CLIENT_SECRET", clientSecret)
+	//os.Setenv("GITHUB_CLIENT_ID", clientID)
+	//os.Setenv("GITHUB_CLIENT_SECRET", clientSecret)
 
 	//service.NewGithubApiDownStream().AccessRepositories()
 	r.Run()

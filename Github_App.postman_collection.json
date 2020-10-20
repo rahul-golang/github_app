@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "c11862d1-0c6a-4442-827e-a607158d4b33",
+		"name": "Github_App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Pull Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"repository\":\"jwe\",\n    \"owner\":\"rahul-golang\"\n    \"title\":\"test \",\n    \"head\":\"feat\",\n    \"base\":\"master\",\n    \"body\":\"test\",\n    \"maintainer_can_modify\":true\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/git/pull-request",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"git",
+						"pull-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repository",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:8080/git/get-repo?owner=ewewe&repository=dsds",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"git",
+						"get-repo"
+					],
+					"query": [
+						{
+							"key": "owner",
+							"value": "ewewe"
+						},
+						{
+							"key": "repository",
+							"value": "dsds"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
